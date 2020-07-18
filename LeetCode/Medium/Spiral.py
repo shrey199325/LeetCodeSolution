@@ -35,5 +35,5 @@ class Sol2(object):
         return matrix and list(matrix.pop(0)) + self.spiralOrder(zip(*matrix)[::-1])
 
 mat = [[1,2,3],[4,5,6],[7,8,9]]
-print Solution().spiralOrder(mat)
-print Sol2().spiralOrder(mat)
+print(Solution().spiralOrder(mat))
+print(Sol2().spiralOrder(mat))

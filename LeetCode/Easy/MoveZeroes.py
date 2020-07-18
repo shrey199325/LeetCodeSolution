@@ -18,5 +18,5 @@ class Solution(object):
 
 nums1 = [0,1,0,3,12]
 Solution().moveZeroes(nums1)
-print "Sol:"
-print nums1
+print("Sol:")
+print(nums1)

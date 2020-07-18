@@ -46,7 +46,7 @@ class Solution2(object):
                     res = res - 1 if prime[i * j] else res
                     prime[i * j] = False
                     j += 1
-        print res
+        print(res)
         return res
 
     def numPrimeArrangements(self, n):
