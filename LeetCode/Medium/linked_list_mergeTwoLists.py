@@ -28,19 +28,19 @@ class Solution(object):
         curr = LinkedList()
         while l1 or l2:
             if l1 is None:
-                print "Only second linked list is present"
-                print "Insert value: {}".format(l1.val)
+                print("Only second linked list is present")
+                print("Insert value: {}".format(l1.val))
                 return curr.insert(curr.root, l2)
             elif l2 is None:
-                print "Only first linked list is present"
-                print "Insert value: {}".format(l1.val)
+                print("Only first linked list is present")
+                print("Insert value: {}".format(l1.val))
                 return curr.insert(curr.root, l1)
             elif l1.val<=l2.val:
-                print "inserting val: {}".format(l1.val)
+                print("inserting val: {}".format(l1.val))
                 curr.root = curr.insert(curr.root, ListNode(l1.val))
                 l1 = l1.next
             else:
-                print "inserting val: {}".format(l2.val)
+                print("inserting val: {}".format(l2.val))
                 curr.root = curr.insert(curr.root, ListNode(l2.val))
                 l2 = l2.next
         return curr.root
@@ -52,8 +52,8 @@ l1.next.next = ListNode(14)
 l2 = ListNode(11)
 ll = Solution().mergeTwoLists(l1, l2)
 #ll = Solution().mergeTwoLists(l1, None)
-print "root: {}".format(ll.val)
+print("root: {}".format(ll.val))
 while ll.next:
     ll = ll.next
-    print "next: {}".format(ll.val)
+    print("next: {}".format(ll.val))
     

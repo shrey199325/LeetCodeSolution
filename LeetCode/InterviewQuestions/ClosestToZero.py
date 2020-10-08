@@ -15,10 +15,10 @@ def Solve(N,A):
     return res_dict[min_diff]
 
 
-N = int(raw_input())
+N = int(input())
 
-A = list(map(int,raw_input().split()))
+A = list(map(int,input().split()))
 
 out_ = Solve(N,A)
 
-print (out_)
+print(out_)

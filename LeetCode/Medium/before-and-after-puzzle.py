@@ -27,12 +27,12 @@ class Solution(object):
 
 
 
-# print Solution().beforeAndAfterPuzzles(["a","b","a"])
-# print Solution().beforeAndAfterPuzzles(["writing code","code rocks"])
+# print(Solution().beforeAndAfterPuzzles(["a","b","a"]))
+# print(Solution().beforeAndAfterPuzzles(["writing code","code rocks"]))
 res =  Solution().beforeAndAfterPuzzles(["mission statement","a quick bite to eat","a chip off the old block","chocolate bar","mission impossible","a man on a mission","block party","eat my words","bar of soap"])
 
 
 abc = ["a quick bite to eat my words","a man on a mission statement","chocolate bar of soap","a chip off the old block party","a man on a mission impossible"]
 
-print res
-print abc
+print(res)
+print(abc)

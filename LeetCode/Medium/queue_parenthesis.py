@@ -30,4 +30,4 @@ def isValid(s):
                 curr = tmp
         return True
 
-print isValid('{[]}')
+print(isValid('{[]}'))

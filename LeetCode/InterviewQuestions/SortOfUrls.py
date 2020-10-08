@@ -28,10 +28,10 @@ def solve(S, N):
 
 N = int(input())
 S = []
-for _ in xrange(N):
-    S.append(Website(raw_input()))
+for _ in range(N):
+    S.append(Website(input()))
 
 out_ = solve(S, N)
-print len(out_)
+print(len(out_))
 for i_out_ in out_:
-    print i_out_[0]
+    print(i_out_[0])
