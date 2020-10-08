@@ -1,10 +1,10 @@
 def Solve(N, A):
     count = 0
     already_checked = set()
-    for j in xrange(len(A)):
+    for j in range(len(A)):
         i = A[j]
         if i not in already_checked:
-            for k in xrange(j+1, len(A)):
+            for k in range(j+1, len(A)):
                 if i % A[k] == 0:
                     count += 1
                     already_checked.add(i)
@@ -12,14 +12,14 @@ def Solve(N, A):
                     already_checked.add(A[k])
         else:
             count+=1
-    print already_checked
+    print(already_checked)
     return count
 
 
-N = int(raw_input())
+N = int(input())
 
-A = list(map(int, raw_input().split()))
+A = list(map(int, input().split()))
 
 out_ = Solve(N, A)
 
-print (out_)
+print(out_)

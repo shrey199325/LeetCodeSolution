@@ -17,7 +17,7 @@ for i in range(0,rem/2+1):
             s.append(pair)
         elif pair[1] in d:
             s.append(pair)
-print s
+print(s)
 
 #######################################################################################
 #######################################################################################
@@ -30,4 +30,4 @@ for ele in p:
         result.add((ele, golden_val-ele))
     rem55.add(golden_val-ele)
 
-print result
+print(result)

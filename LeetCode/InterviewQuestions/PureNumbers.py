@@ -16,8 +16,8 @@ def Solve (N):
 
 
 T = input()
-for _ in xrange(T):
+for _ in range(T):
     N = input()
 
     out_ = Solve(N)
-    print out_
+    print(out_)

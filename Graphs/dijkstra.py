@@ -1,5 +1,5 @@
-from queue import PriorityQueue
-from typing import List, Dict, Set
+import heapq as H
+from typing import List, Dict, Set, Tuple
 
 SEPARATOR: str = "\t"
 MAXINT: int = 10**6
@@ -21,7 +21,7 @@ class Graph:
         self.adj_list: List[Dict[int, int]] = [{} for _ in range(n)]
         self.adj_list_creator(mat)
         self.S: Set[int] = set()
-        self.Q: PriorityQueue = PriorityQueue()
+        self.Q: List[Tuple[int, int]] = []
         self.src: int = src
         self.D: List[int] = [MAXINT] * n
         self.retrace: List[int] = [-1] * n
@@ -60,17 +60,17 @@ class Graph:
             # new shortest path estimate would be the sum of
             # weights of path from source -> u and u -> u
             self.retrace[v] = u
-            self.Q.put((self.D[v], v,))
+            H.heappush(self.Q, (self.D[v], v,))
 
     def Dijkstra(self):
         """
         Iterative approach for Dijkstra's Algorithm
         """
         initial_wt = 0    # Since there would be no self loops (given)
-        self.Q.put((initial_wt, self.src,))
+        H.heappush(self.Q, (initial_wt, self.src,))
         self.D[self.src] = initial_wt
-        while not self.Q.empty():
-            wt, curr_vertex = self.Q.get()
+        while self.Q:
+            wt, curr_vertex = H.heappop(self.Q)
             if curr_vertex not in self.S:
                 for nbr in self.adj_list[curr_vertex].keys():
                     if nbr not in self.S:

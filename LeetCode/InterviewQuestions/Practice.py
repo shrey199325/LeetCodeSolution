@@ -1,15 +1,15 @@
 '''
 # Sample code to perform I/O:
 
-name = raw_input()          # Reading input from STDIN
-print 'Hi, %s.' % name      # Writing output to STDOUT
+name = input()          # Reading input from STDIN
+print('Hi, %s.') % name      # Writing output to STDOUT
 
 # Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
 '''
 
 # Write your code here
 T = int(input())
-temp = raw_input().split(" ")
+temp = input().split(" ")
 N = [int(x) for x in temp]
 
 for j in N:
