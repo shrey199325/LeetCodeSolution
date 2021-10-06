@@ -41,7 +41,7 @@ a  F  T F F
 *  T  T
 """
 
-
+# Incorrect
 class Solution:
     def isMatch(self, s, p):
         if p == ".*":
@@ -84,6 +84,32 @@ class Solution:
 a  F  t f
 *  T  t 
 """
+
+
+class Solution2:
+    def isMatch(self, s: str, p: str) -> bool:
+        form = [[False for _ in range(len(p) + 1)] for __ in range(len(s) + 1)]
+        form[0][0] = True # empty
+        for j in range(2, len(p) + 1):
+            form[0][j] = self.check("", p[j - 1], p[j - 2], False, False, form[0][j - 2])
+        for i in range(1, len(s) + 1):
+            for j in range(1, len(p) + 1):
+                p_prev = p[j - 2] if j >= 2 else ""
+                lefter = form[i][j - 2] if j >= 2 else False
+                form[i][j] = self.check(s[i - 1], p[j - 1], p_prev, form[i - 1][j - 1],
+                                        form[i - 1][j], lefter)
+        # print(form)
+        return form[-1][-1]
+
+    def check(self, s: str, p: str, p_prev: str, prev: bool, up: bool, lefter: bool) -> bool:
+        if s == p or p == ".":
+            return prev
+        elif p == "*":
+            if s == p_prev or p_prev == ".":
+                return lefter or up
+            return lefter
+        else:
+            return False
 
 # s="aa"
 # p = "a*"
