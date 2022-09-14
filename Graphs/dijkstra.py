@@ -114,7 +114,7 @@ B = [
     [0, 1, 1],
     [0, 5, 1]
 ]
-C = 0
+# C = 0
 G = Graph(A, B, C)
 print("Adjacency map: {}".format(G.adj_list))
 G.Dijkstra()

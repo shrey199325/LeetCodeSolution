@@ -4,6 +4,7 @@ class Solution:
     def solve(self, A):
         prefix, postfix = [A[0]], [A[-1]]
         n = len(A)
+        res = -1
         if 1 <= n <= 2:
             return max(A)
         elif n == 0:
@@ -15,12 +16,14 @@ class Solution:
         # print(prefix, postfix)
         for i in range(1, n - 1):
             # print(prefix[i - 1], postfix[-(i + 2)])
-            max_ = max(max_, self.gcd(prefix[i - 1], postfix[-(i + 2)]))
+            if max_ < self.gcd(prefix[i - 1], postfix[-(i + 2)]):
+                res = i
+                max_ = max(max_, self.gcd(prefix[i - 1], postfix[-(i + 2)]))
         # if len(prefix) >= 2:
         #     max_ = max(prefix[-2], max_)
         # if len(postfix) >= 2:
         #     max_ = max(postfix[1], max_)
-        return max_
+        return A[res]
 
     def gcd(self, a, b):
         if a == b == 0:

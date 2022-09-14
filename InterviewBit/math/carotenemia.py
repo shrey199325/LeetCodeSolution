@@ -1,8 +1,11 @@
 """
 Carotenemia
-You are given an Array of boxes A, where each box consists of oranges. You really love oranges, and you want to eat atleast B oranges. You start from the 0th index of the array, and keep eating oranges until you eat B oranges. If oranges from a box at ith index get depleted, you start eating from the (i+1)th box.
+You are given an Array of boxes A, where each box consists of oranges. You really love oranges, and you want to eat
+atleast B oranges. You start from the 0th index of the array, and keep eating oranges until you eat B oranges. If
+oranges from a box at ith index get depleted, you start eating from the (i+1)th box.
 
-Determine index of the box where you finish eating B number of oranges. If you don't eat B oranges even after eating from all the boxes, return -1.
+Determine index of the box where you finish eating B number of oranges. If you don't eat B oranges even after eating
+from all the boxes, return -1.
 
 Input:
 
@@ -50,8 +53,8 @@ class Solution:
     # @param B : integer
     # @return an integer
     def solve(self, A, B):
-        for i in range(len(A)):
-            B = B - A[i]
+        for i in A:
+            B -= i
             if B <= 0:
                 return i
         return -1

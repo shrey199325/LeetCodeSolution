@@ -15,7 +15,7 @@ class Solution(object):
                 val = 10 ** i
                 res1 += val
         res1 //= 10
-        while res1%10!=0:
+        while res1 % 10 != 0:
             res1 //= 10
             k += 1
         return k+1
@@ -55,7 +55,7 @@ class Solution2(object):
         return i+1
 
 
-nums = [1,2,3,4,5]
+nums = [1,-2,3,4,5]
 print(Solution2().firstMissingPositive(nums), 6)
 nums = [1]
 print(Solution2().firstMissingPositive(nums), 2)

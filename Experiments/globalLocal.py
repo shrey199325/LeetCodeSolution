@@ -3,6 +3,10 @@ arg = None
 
 def change_local():
     parser = "serve"
+    def change_nonlocal():
+        nonlocal parser
+        parser = "serving"
+    change_nonlocal()
     return parser
 
 

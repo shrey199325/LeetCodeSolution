@@ -1,12 +1,14 @@
+
 import heapq as H
 from typing import List, Tuple
 
 SEPARATOR: str = "\t"
 MAXINT = 10**9
+matrix = List[List[int]]
 
 
 class Graph:
-    def __init__(self, n: int, mat: List[List[int]], src: int = 0):
+    def __init__(self, n: int, mat: matrix, src: int = 0):
         """
         Create the adjacency list for the given matrix
         :param n: no of nodes

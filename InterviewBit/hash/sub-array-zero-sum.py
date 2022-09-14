@@ -67,3 +67,7 @@ class Solution:
             else:
                 return 1
         return 0
+
+
+A = [-1, 1]
+print(Solution().solve(A))

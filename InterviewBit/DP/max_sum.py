@@ -70,7 +70,7 @@ class Solution:
     def solve(self, A, B, C, D):
         MAX_INT = 10 ** 4 + 1
         n = len(A)
-        dp = [[-MAX_INT for i in range(3)] for j in range(n + 1)]  # dp array to store answer of previous states
+        dp = [[-float("inf") for i in range(3)] for j in range(n + 1)]  # dp array to store answer of previous states
 
         # Initialize the dp array with minus infinity
 
@@ -80,3 +80,10 @@ class Solution:
             dp[i][2] = max(dp[i - 1][2], dp[i][1] + A[i - 1] * D)  # Maximum value of A[i] * B + A[j] * C + A[k] * D
 
         return dp[n][2]
+
+
+A = [1, 5, -3, 4, -2]
+B = 2
+C = 1
+D = -1
+print(Solution().solve(A, B, C, D))

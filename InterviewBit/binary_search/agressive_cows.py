@@ -2,9 +2,12 @@
 Aggressive cows
 Problem Description
 
-Farmer John has built a new long barn, with N stalls. Given an array of integers A of size N where each element of the array represents the location of the stall, and an integer B which represent the number of cows.
+Farmer John has built a new long barn, with N stalls. Given an array of integers A of size N where each element of the
+array represents the location of the stall, and an integer B which represent the number of cows.
 
-His cows don't like this barn layout and become aggressive towards each other once put into a stall. To prevent the cows from hurting each other, John wants to assign the cows to the stalls, such that the minimum distance between any two of them is as large as possible. What is the largest minimum distance?
+His cows don't like this barn layout and become aggressive towards each other once put into a stall. To prevent the cows
+from hurting each other, John wants to assign the cows to the stalls, such that the minimum distance between any two of
+them is as large as possible. What is the largest minimum distance?
 
 
 
@@ -61,8 +64,8 @@ The minimum distance will be 1.
 
 
 class Solution:
-    # @param A : list of integers
-    # @param B : integer
+    # @param A : list of integers - array of shed
+    # @param B : integer - No of cows
     # @return an integer
     def solve(self, A, B):
         # max_ = max(A)
@@ -72,13 +75,15 @@ class Solution:
         h = A[-1] - A[0]
         result = l
         while l <= h:
-            mid = (l + h) // 2
+            mid = (l // 2) + (h // 2)
             j = 1
             next_stall = A[0] + mid
             for i in A[1:]:
                 if next_stall <= i:
                     next_stall = i + mid
-                    j+=1
+                    j += 1
+                    if j >= B:
+                        break
             if j >= B:
                 result = mid
                 l = mid + 1
